@@ -5,7 +5,7 @@ class Apigames {
   /**
    * @param {string} merchant - Merchant ID
    * @param {string} secret - Secret Key
-   */
+   **/
   constructor(merchant, secret) {
     this._merchant = merchant;
     this._secret = secret;
