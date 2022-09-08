@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/aripadrian/apigames/issues"
   },
-  "homepage": "https://github.com/aripadrian/apigames#readme"
+  "homepage": "https://github.com/aripadrian/apigames#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9"
+  }
 }
