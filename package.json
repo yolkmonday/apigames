@@ -1,6 +1,6 @@
 {
   "name": "apigames",
-  "version": "1.0.2-beta",
+  "version": "1.0.3-beta",
   "description": "Unofficial apigames client library for Node Js ",
   "main": "index.js",
   "scripts": {

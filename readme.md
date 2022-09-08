@@ -22,10 +22,7 @@ Dapatkan Merchant ID dan Secret Key Anda di [Apigames Dashboard](https://member.
 
 ```js
 const Apigames = require('apigames');
-const client = new Xendit({
-  merchant: "YOUR MERCHANT ID",
-  secret: "YOUR SECRET CODE"
-});
+const client = new Apigames("YOUR MERCHANT ID","YOUR SECRET");
 ```
 
 
