@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/aripadrian/apigames/badge)](https://www.codefactor.io/repository/github/aripadrian/apigames)
 # Apigames Client for Node Js
 
 This library is the abstraction of Apigames API for access from applications written with server-side Javascript.
