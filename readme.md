@@ -42,9 +42,13 @@ Coming Soon
 ```
 
 ### Transaksi
+
 ```js
-Coming Soon
+let transaksi = await client.transaksi(productCode, tujuan, refId);
 ```
+
+> Note:
+> RefID adalah kode transaksi unik kamu yang di generate secara acak
 
 ### Cek Status Transaksi
 ```js
