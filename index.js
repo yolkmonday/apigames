@@ -1,5 +1,5 @@
-const crypto = require('crypto')
-const rp = require('request-promise-native');
+const crypto = require("crypto")
+const rp = require("request-promise-native");
 
 class Apigames {
   /**
@@ -9,15 +9,19 @@ class Apigames {
   constructor(merchant, secret) {
     this._merchant = merchant;
     this._secret = secret;
-    this._endpoint = 'https://v1.apigames.id'
+    this._endpoint = "https://v1.apigames.id"
   }
 
   cekSaldo() {
-    let signature = crypto.createHash('md5').update(`${this._merchant}${this._secret}`).digest('hex')
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}${this._secret}`)
+      .digest('hex')
+
     const options = {
-      method: 'GET',
+      method: "GET",
       uri: `${this._endpoint}/merchant/${this._merchant}?signature=${signature}`,
-      json: true
+      json: true,
     };
 
     return rp(options)
@@ -26,12 +30,12 @@ class Apigames {
           if (typeof resp.data.saldo !== undefined) {
             return resp.data.saldo;
           } else {
-            throw Error(resp.data.error_msg)
+            throw Error(resp.data.error_msg);
           }
         }
       })
       .catch(function (err) {
-        throw Error(err)
+        throw Error(err);
       });
   }
 
@@ -45,19 +49,19 @@ class Apigames {
     const options = {
       method: 'GET',
       uri: `${this._endpoint}/transaksi/http-get-v1?merchant=${this._merchant}&secret=${this._secret}&produk=${productCode}&tujuan=${tujuan}&ref=${refId}`,
-      json: true
+      json: true,
     };
 
     return rp(options)
       .then(function (resp) {
         if (resp.data) {
-          return resp.data
+          return resp.data;
         }
       })
       .catch(function (err) {
-        throw Error(err)
+        throw Error(err);
       });
   }
 }
 
-module.exports = Apigames
+module.exports = Apigames;
