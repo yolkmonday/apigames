@@ -51,11 +51,7 @@ class Apigames {
     return rp(options)
       .then(function (resp) {
         if (resp.data) {
-          if (typeof resp.data.saldo !== undefined) {
-            return resp.data.saldo;
-          } else {
-            throw Error(resp.data.error_msg)
-          }
+          return resp.data
         }
       })
       .catch(function (err) {
