@@ -4,6 +4,8 @@
 This library is the abstraction of Apigames API for access from applications written with server-side Javascript.
 
 [![NPM](https://nodei.co/npm/apigames.png)](https://nodei.co/npm/apigames/)
+[![Npm package monthly downloads](https://badgen.net/npm/dm/apigames)](https://npmjs.ccom/package/apigames)
+
 
 
 ## Instalasi
