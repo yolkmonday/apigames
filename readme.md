@@ -37,8 +37,10 @@ let saldo = await client.cekSaldo();
 
 ### Cek Akun Game
 ```js
-Coming Soon
+let saldo = await client.cekAkunGame(gameCode, userId);
 ```
+
+> Game yang tersedia : mobilelegend , freefire, higgs
 
 ### Cek Status Koneksi
 ```js

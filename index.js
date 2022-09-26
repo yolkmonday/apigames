@@ -62,6 +62,33 @@ class Apigames {
         throw Error(err);
       });
   }
+
+
+  /**
+   * @param {string} gameCode - Kode Game
+   * @param {string} userId - User ID
+   **/
+  cekAkunGame(gameCode, userId) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}${this._secret}`)
+      .digest('hex')
+    const options = {
+      method: 'GET',
+      uri: `${this._endpoint}/merchant/${this._merchant}/cek-username/${gameCode}?user_id=${userId}&signature=${signature}`,
+      json: true,
+    };
+
+    return rp(options)
+      .then(function (resp) {
+        if (resp) {
+          return resp;
+        }
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
 }
 
 module.exports = Apigames;
