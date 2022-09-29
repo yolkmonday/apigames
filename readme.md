@@ -47,14 +47,27 @@ let saldo = await client.cekAkunGame(gameCode, userId);
 Coming Soon
 ```
 
-### Transaksi
+### Transaksi Versi 1
 
 ```js
-let transaksi = await client.transaksi(productCode, tujuan, refId);
+let transaksi = await client.transaksi(refId, productCode, tujuan);
 ```
+
 
 > Note:
 > RefID adalah kode transaksi unik kamu yang di generate secara acak
+
+### Transaksi Versi 2
+
+```js
+let transaksi = await client.transaksiv2(refId, productCode, tujuan, serverId);
+```
+
+
+> Note:
+> RefID adalah kode transaksi unik kamu yang di generate secara acak
+
+
 
 ### Cek Status Transaksi
 ```js

@@ -45,10 +45,38 @@ class Apigames {
    * @param {string} tujuan - Tujuan Pengisian
    * @param {string} refId - Ref ID Unik Anda
    **/
-  transaksi(productCode, tujuan, refId) {
+  transaksi(refId, productCode, tujuan) {
     const options = {
       method: 'GET',
       uri: `${this._endpoint}/transaksi/http-get-v1?merchant=${this._merchant}&secret=${this._secret}&produk=${productCode}&tujuan=${tujuan}&ref=${refId}`,
+      json: true,
+    };
+
+    return rp(options)
+      .then(function (resp) {
+        if (resp.data) {
+          return resp.data;
+        }
+      })
+      .catch(function (err) {
+        throw Error(err);
+      });
+  }
+
+
+  /**
+   * @param {string} productCode - Kode Produk
+   * @param {string} tujuan - Tujuan Pengisian
+   * @param {string} refId - Ref ID Unik Anda
+   **/
+  transaksiv2(refId, productCode, tujuan, serverId) {
+    let signature = crypto
+      .createHash('md5')
+      .update(`${this._merchant}:${this._secret}:${refId}`)
+      .digest('hex')
+    const options = {
+      method: 'GET',
+      uri: `${this._endpoint}/v2/transaksi?ref_id=${refId}&merchant_id=${this._merchant}&produk=${productCode}&tujuan=${tujuan}&signature=${signature}&server_id=${serverId}`,
       json: true,
     };
 
